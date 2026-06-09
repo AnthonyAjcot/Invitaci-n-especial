@@ -6,32 +6,34 @@
 <title>Invitación Especial para Sofía ❤️</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Courier New', monospace;
 }
 
 body{
     background:#000;
     color:#00ff88;
+    font-family:'Courier New', monospace;
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
     overflow:hidden;
 }
 
 .screen{
+    width:100%;
+    min-height:100vh;
     display:none;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    padding:30px;
     text-align:center;
-    max-width:800px;
-    padding:40px;
 }
 
 .active{
-    display:block;
+    display:flex;
 }
 
 h1{
@@ -39,7 +41,8 @@ h1{
 }
 
 .bar{
-    width:100%;
+    width:90%;
+    max-width:500px;
     height:25px;
     border:1px solid #00ff88;
     margin:25px 0;
@@ -52,171 +55,251 @@ h1{
     transition:3s;
 }
 
-button{
-    margin-top:30px;
-    padding:12px 30px;
-    border:none;
-    background:#00ff88;
-    color:black;
-    cursor:pointer;
-    border-radius:10px;
-    font-size:16px;
+.result{
+    margin-top:20px;
+    font-size:20px;
+    line-height:1.8;
 }
 
 .final{
-    background:linear-gradient(135deg,#111,#1b1b1b);
+    background:#080808;
     color:white;
-    font-family:Georgia,serif;
+    overflow-y:auto;
+    font-family:Georgia, serif;
+}
+
+.final-container{
+    max-width:800px;
+    padding:40px 25px;
 }
 
 .final h1{
-    color:#ffd700;
+    color:#ffffff;
+    margin-bottom:20px;
 }
 
 .final p{
-    line-height:1.8;
-    margin:15px 0;
+    line-height:1.9;
+    margin:20px 0;
 }
 
-ul{
+.final ul{
     text-align:left;
-    margin-top:20px;
+    margin-top:25px;
+    margin-left:25px;
 }
 
-li{
-    margin:10px 0;
+.final li{
+    margin:12px 0;
 }
+
+.btn{
+    margin-top:35px;
+    padding:15px 30px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+    background:#ff4d6d;
+    color:white;
+}
+
+#aceptada{
+    display:none;
+}
+
+.big{
+    font-size:38px;
+    font-weight:bold;
+    margin-top:25px;
+}
+
+.heart{
+    font-size:50px;
+    margin-top:15px;
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="screen" class="screen active">
-    <h1 id="title">INICIANDO SISTEMA...</h1>
-    <div class="bar">
-        <div class="fill" id="fill"></div>
-    </div>
-    <p id="text">Preparando búsqueda...</p>
+<div id="hacker" class="screen active">
+
+<h1 id="title">Iniciando sistema...</h1>
+
+<div class="bar">
+<div id="fill" class="fill"></div>
+</div>
+
+<div id="result" class="result">
+Preparando análisis...
+</div>
+
 </div>
 
 <div id="final" class="screen final">
-    <h1>Invitación Especial</h1>
 
-    <p>
-    Porque hay logros que merecen ser celebrados de una manera especial.
-    </p>
+<div class="final-container">
 
-    <p>
-    <strong>Motivo del evento</strong><br>
-    Celebrar a una mujer increíble que, con esfuerzo, dedicación,
-    valentía y muchísimo trabajo, logró superar uno de los momentos
-    más importantes de su carrera universitaria.
-    </p>
+<div id="invitacion">
 
-    <p>
-    <strong>Invitada de honor</strong><br>
-    Sofía ❤️
-    </p>
+<h1>Invitación Especial</h1>
 
-    <h2>Razones por las que estoy orgulloso de ti</h2>
+<p>
+Porque hay logros que merecen ser celebrados de una manera especial.
+</p>
 
-    <ul>
-        <li>Porque nunca te rindes.</li>
-        <li>Porque luchas por tus sueños.</li>
-        <li>Porque eres increíblemente inteligente.</li>
-        <li>Porque tienes un corazón hermoso.</li>
-        <li>Porque eres tú.</li>
-    </ul>
+<p>
+<b>Motivo del evento</b><br><br>
+Celebrar a una mujer increíble que, con esfuerzo, dedicación, valentía y muchísimo trabajo, logró superar uno de los momentos más importantes de su carrera universitaria.
+</p>
 
-    <p style="margin-top:30px;">
-    Gracias por aceptar esta invitación,
-    te estaré esperando con muchísima ilusión.
-    </p>
+<p>
+<b>Invitada de honor</b><br><br>
+Sofía ❤️
+</p>
 
-    <p>
-    Mañana no será un día para hablar de preocupaciones,
-    tareas o estrés.
-    </p>
+<h2>Razones por las que estoy orgulloso de ti</h2>
 
-    <p>
-    Será un día para celebrar a una mujer inteligente,
-    fuerte, dedicada y maravillosa.
-    </p>
+<ul>
+<li>Porque nunca te rindes.</li>
+<li>Porque luchas por tus sueños.</li>
+<li>Porque eres increíblemente inteligente.</li>
+<li>Porque tienes un corazón hermoso.</li>
+<li>Porque eres tú.</li>
+</ul>
 
-    <h2 style="margin-top:30px;">
-    La estrella de esta celebración eres tú ❤️
-    </h2>
+<button class="btn" onclick="aceptarInvitacion()">
+Aceptar Invitación ❤️
+</button>
 
-    <p>
-    Te espero con ansias, mi princesa.
-    </p>
+</div>
+
+<div id="aceptada">
+
+<h1>Gracias por aceptar esta invitación ❤️</h1>
+
+<p>
+Te estaré esperando con muchísima ilusión.
+</p>
+
+<p>
+Mañana no será un día para hablar de preocupaciones, tareas o estrés.
+</p>
+
+<p>
+Será un día para celebrar a una mujer inteligente, fuerte, dedicada y maravillosa.
+</p>
+
+<div class="big">
+La estrella de esta celebración eres tú
+</div>
+
+<div class="heart">
+❤️
+</div>
+
+<p style="margin-top:30px;">
+Te espero con ansias, mi princesa.
+</p>
+
+</div>
+
+</div>
+
 </div>
 
 <script>
 
-const screens = [
+const pantallas = [
 
 {
-title:"Buscando a la persona más inteligente...",
-result:"✓ PERSONA ENCONTRADA<br><br>Sofía"
+titulo:"Buscando a la persona más inteligente...",
+resultado:"✓ PERSONA ENCONTRADA<br><br>Sofía"
 },
 
 {
-title:"Buscando a la colochita más inteligente...",
-result:"✓ OBJETIVO ENCONTRADO<br><br>Sofía"
+titulo:"Buscando a la colochita más inteligente...",
+resultado:"✓ OBJETIVO ENCONTRADO<br><br>Sofía"
 },
 
 {
-title:"Buscando a la mujer más perfecta de este mundo...",
-result:"✓ RESULTADO ENCONTRADO<br><br>Sofía"
+titulo:"Buscando a la mujer más perfecta de este mundo...",
+resultado:"✓ RESULTADO ENCONTRADO<br><br>Sofía"
 },
 
 {
-title:"Buscando a la mejor novia y la más hermosa del mundo...",
-result:"✓ RESULTADO CONFIRMADO<br><br>Sofía"
+titulo:"Buscando a la mejor novia y más hermosa del mundo...",
+resultado:"✓ RESULTADO CONFIRMADO<br><br>Sofía"
 },
 
 {
-title:"Buscando a la persona indicada para esta cita...",
-result:"✓ COMPATIBILIDAD ENCONTRADA<br><br>Sofía ❤️ Anthony<br><br>100%"
+titulo:"Buscando a la persona indicada para esta cita...",
+resultado:"✓ COMPATIBILIDAD ENCONTRADA<br><br>Sofía ❤️ Anthony<br><br>100%"
 }
 
 ];
 
 let index = 0;
 
-function runScreen(){
+function mostrarPantalla(){
 
-if(index >= screens.length){
+if(index >= pantallas.length){
 
-document.getElementById("screen").style.display="none";
-document.getElementById("final").style.display="block";
+document.getElementById("hacker").style.display="none";
+document.getElementById("final").style.display="flex";
+document.body.style.overflow="auto";
 return;
+
 }
 
 const fill = document.getElementById("fill");
 
+fill.style.transition="none";
 fill.style.width="0%";
 
-document.getElementById("title").innerHTML=screens[index].title;
-document.getElementById("text").innerHTML="Analizando...";
+document.getElementById("title").innerHTML =
+pantallas[index].titulo;
+
+document.getElementById("result").innerHTML =
+"Analizando...";
 
 setTimeout(()=>{
+fill.style.transition="3s";
 fill.style.width="100%";
 },100);
 
 setTimeout(()=>{
-document.getElementById("text").innerHTML=screens[index].result;
+
+document.getElementById("result").innerHTML =
+pantallas[index].resultado;
+
 },3200);
 
 setTimeout(()=>{
+
 index++;
-runScreen();
+mostrarPantalla();
+
 },6000);
 
 }
 
-runScreen();
+function aceptarInvitacion(){
+
+document.getElementById("invitacion").style.display="none";
+
+document.getElementById("aceptada").style.display="block";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+mostrarPantalla();
 
 </script>
 
